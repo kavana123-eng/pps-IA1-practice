@@ -3,31 +3,33 @@ struct _complex
 {
   int real, imaginary;
 };
-struct complex input_chellox()
+typedef struct_complex Complex;
+Complex input_complex()
 {
-  struct complex p;
+  Complex p;
   printf("enter the real and imaginary number\n");
   scanf("%d%d",&p.real,&p.imaginary);
   return p;
 }
-struct complex add_complex(struct complex a,struct complex b)
+ Complex add( Complex a, Complex b)
 {
-  struct complex x;
-  x.real=a.real+b.real;
-  x.imaginary=a.imaginary+b.imaginary;
-  return x;
+  Complex z;
+  z.real=a.real+b.real;
+  z.imaginary=a.imaginary+b.imaginary;
+  return z;
 }
-void output(struct complex a,stuct complex b,struct complex x)
+void output( Complex a, Complex b, Complex c)
 {
-  printf("the sum of (%d+%di)+(%d+%di)=(%d+%di)",a.real,a.imaginary,b.real,b.imaginary,x.real,x.imaginary);
+  printf("the sum of (%d+%di)+(%d+%di)=(%d+%di)\n",a.real,a.imaginary,b.real,b.imaginary,c.real,c.imaginary);
 }
 int main()
 {
   struct complex a,b,c;
-  a=input_chellox();
-  b=input_chellox();
-  c=add_complex(a,b);
+  a=input_complex();
+  b=input_complex();
+  c=add(a,b);
   output(a,b,c);
   return 0;
 }
+
 
